@@ -1354,7 +1354,7 @@
                     $("t_mascha2").src = "Images/mascha2/theme.png";
                     $("t_mascha3").src = "Images/mascha3/theme.png";
                     $("t_mascha4").src = "Images/mascha4/theme.png";
-                    $("t_shrek").src = "Images/shrek/theme.png";
+                    $("t_mascha5").src = "Images/mascha5/theme.png";
                 }
                 fShowPopup($popupSettings);
             });
@@ -1442,17 +1442,6 @@
                     }
                 }
             });
-            $("s_grrd").addEventListener("click", function () {
-                g_grrd += 1;
-                if (g_grrd > 5) {
-                    $("t_shrek").parentNode.classList.remove("dn");
-                    $("favicon").href = "Images/favicon_dark.ico";
-                    if (localStorageOK) {
-                        localStorage.setItem("s_shrek", "true");
-                    }
-
-                }
-            });
             Array.from(document.getElementsByClassName("dropdown"))[0].childNodes.forEach(function (rButton) {
                 rButton.addEventListener("click", function () {
                     setTheme(rButton.getElementsByTagName("img")[0].getAttribute("alt"));
@@ -1511,15 +1500,6 @@
                 });
                 if (localStorageOK) {
                     localStorage.setItem("s_mascha", "true");
-                }
-            }
-            // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?shrek=true&mascha=true&theme=mascha
-            url_param = urlQuery("shrek");
-            if (url_param === "true" || (localStorageOK && localStorage.getItem("s_shrek") === "true")) {
-                $("t_shrek").parentNode.classList.remove("dn");
-                $("favicon").href = "Images/favicon_dark.ico";
-                if (localStorageOK) {
-                    localStorage.setItem("s_shrek", "true");
                 }
             }
             // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?theme=mascha

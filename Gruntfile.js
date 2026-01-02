@@ -156,49 +156,6 @@ module.exports = function(grunt) {
                 files: [
                     {expand: true, flatten: true, src: ['../../2_Build/Puzzle/index.html'], dest: '../../2_Build/Puzzle/'}
                 ]
-            },
-            dist2: {
-                options: {
-                    patterns: [
-                        {
-                            match: /select-button dn/g,
-                            replacement: 'select-button'
-                        },
-                        {
-                            match: /t_mascha dn/g,
-                            replacement: 't_mascha'
-                        },
-                        {
-                            match: /favicon.ico/g,
-                            replacement: 'favicon_dark.ico'
-                        },
-                        {
-                            match: /apple-touch-icon-/g,
-                            replacement: 'apple-dark-icon-'
-                        },
-                        {
-                            // <link rel="alternate" hreflang="en" href="https://grrd01.github.io/Puzzle/?lang=en" />
-                            match: /\<link\srel="alternate"\shreflang=".."\shref="https:\/\/grrd01\.github\.io\/Puzzle\/\?lang=.."\>/g,
-                            replacement: function () {
-                                return "";
-                            }
-                        },
-                        {
-                            // <link rel="canonical" href="https://grrd01.github.io/Puzzle/?lang=en" />
-                            match: /\<link\srel="canonical"\shref="https:\/\/grrd01\.github\.io\/Puzzle\/\?lang=.."\>/g,
-                            replacement: function () {
-                                return "";
-                            }
-                        }
-                    ]
-                },
-                files: [
-                    {expand: true, flatten: true, src: ['../../2_Build/Puzzle/index.html'], dest: '../../2_Build/Puzzle/',
-                        rename: function(dest, src) {
-                            return dest + src.replace('index.html','shrek.html');
-                        }
-                    }
-                ]
             }
         },
         copy: {
